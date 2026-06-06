@@ -1,5 +1,7 @@
 # 基于 Atari Pong 的启发式学习实验
 
+[English](README.md) | 中文
+
 本项目记录了一次基于 Atari Pong 的**启发式学习**策略优化实验，这一思想来自翁家翌的博客[《Learning Beyond Gradients》](https://trinkle23897.github.io/learning-beyond-gradients/)。
 - 直观效果：使用 Codex 进行启发式优化 100 轮后，在在不同种子设定下的 30 局比赛中实现**全胜**，平均分差从 -6.40 提升至 5.43。
 
@@ -18,8 +20,8 @@
 ## 关键文档
 
 - [OPT.md](OPT.md)：策略优化循环说明，定义了评估、读取 trace、归档、修改、复评和保留/回滚的工作流。
-- [POLICY.md](POLICY.md)：最终策略说明，文字化解析最终策略结构、可用 state、控制逻辑和固定评估结果。
-- [REPORT.md](REPORT.md)：启发式学习过程报告，总结优化历史、人工/模型决策和实验启发。
+- [POLICY.md](docs/POLICY_zh.md)：最终策略说明，文字化解析最终策略结构、可用 state、控制逻辑和固定评估结果。
+- [REPORT.md](docs/REPORT_zh.md)：启发式学习过程报告，总结优化历史、人工/模型决策和实验启发。
 
 ## 环境
 
@@ -95,4 +97,3 @@ python plot_policy_archive.py
 ## 致谢
 
 感谢翁家翌在[《Learning Beyond Gradients》](https://trinkle23897.github.io/learning-beyond-gradients/)中分享的启发式学习思路，为本项目提供了重要启发。
-

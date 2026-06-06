@@ -1,4 +1,4 @@
-# OPT.md
+# OPT
 
 ## Policy Optimization Loop
 

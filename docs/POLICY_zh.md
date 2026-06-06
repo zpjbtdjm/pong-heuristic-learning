@@ -1,5 +1,7 @@
 # Pong RAM 策略报告
 
+[English](POLICY.md) | 中文
+
 ## 最终策略概览
 
 最终策略是一个只依赖 RAM 精简状态的确定性启发式策略。策略文件为 `pong_policy.py`，并且只包含一个函数：
