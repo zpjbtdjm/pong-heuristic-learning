@@ -94,4 +94,4 @@ The default output is `results/policy_archive_performance.png`.
 
 ## Acknowledgements
 
-Thanks to Weng Jiayi for sharing the heuristic learning idea in [Learning Beyond Gradients](https://trinkle23897.github.io/learning-beyond-gradients/), which provided important inspiration for this project.
+Thanks to Jiayi Weng for sharing the heuristic learning idea in [Learning Beyond Gradients](https://trinkle23897.github.io/learning-beyond-gradients/), which provided important inspiration for this project.
