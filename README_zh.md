@@ -17,19 +17,10 @@
 - `results/`：归档评估数据和性能图。
 - `sessions/`：完整的 Codex 对话过程。
 
-## 关键文档
+## 结果文档
 
-- [OPT.md](OPT.md)：策略优化循环说明，定义了评估、读取 trace、归档、修改、复评和保留/回滚的工作流。
 - [POLICY.md](docs/POLICY_zh.md)：最终策略说明，文字化解析最终策略结构、可用 state、控制逻辑和固定评估结果。
 - [REPORT.md](docs/REPORT_zh.md)：启发式学习过程报告，总结优化历史、人工/模型决策和实验启发。
-
-## 环境
-
-项目环境配置：
-
-```shell
-pip install -r requirements.txt
-```
 
 ## 优化过程
 
@@ -50,11 +41,19 @@ pip install -r requirements.txt
 模型平均与对手的分差从 -6.40 提升到 5.43。比赛结果从 30 局 11 分制中仅胜 1 局，到所有局全胜。
 
 
-## 结果展示
+## 快速开始
 
-### 快速评估
+### 环境
 
-运行最终策略的固定评估：
+项目环境配置：
+
+```shell
+pip install -r requirements.txt
+```
+
+### 标准评估
+
+运行最终策略的评估：
 
 ```shell
 python eval_pong.py --runs 30 --seed 0

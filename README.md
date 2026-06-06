@@ -18,19 +18,10 @@ The practical result: after 100 rounds of heuristic optimization with Codex, the
 - `results/`: archive evaluation data and performance plots.
 - `sessions/`: full Codex conversation history.
 
-## Key Documents
+## Result Documents
 
-- [OPT.md](OPT.md): policy optimization loop, including evaluation, trace reading, archiving, editing, re-evaluation, and keep/revert rules.
 - [POLICY.md](docs/POLICY.md): final policy explanation, covering policy structure, available state fields, control logic, and fixed evaluation results.
 - [REPORT.md](docs/REPORT.md): heuristic learning process report, summarizing optimization history, human/model decisions, and lessons learned.
-
-## Environment
-
-Install the project dependencies:
-
-```shell
-pip install -r requirements.txt
-```
 
 ## Optimization Process
 
@@ -50,11 +41,19 @@ Optimization performance curve:
 
 The policy's average score margin over the opponent improved from -6.40 to 5.43. The match outcome improved from winning only 1 out of 30 eleven-point games to winning every game.
 
-## Results
+## Quick Start
 
-### Quick Evaluation
+### Environment
 
-Run the fixed evaluation for the final policy:
+Install the project dependencies:
+
+```shell
+pip install -r requirements.txt
+```
+
+### Standard Evaluation
+
+Run the evaluation for the final policy:
 
 ```shell
 python eval_pong.py --runs 30 --seed 0
