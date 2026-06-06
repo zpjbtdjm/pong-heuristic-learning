@@ -234,7 +234,7 @@ def write_plot(rows, output_png, events):
         markeredgecolor=curve_color,
         markerfacecolor=curve_color,
         alpha=0.9,
-        label="Archive Margin",
+        label="Current Best Margin",
         zorder=3,
     )
 
@@ -376,7 +376,7 @@ def write_plot(rows, output_png, events):
     ax.set_ylim(y_min - y_span * 0.10, y_max + y_span * 0.43)
 
     ax.set_xlabel(
-        "Policy Archive Number",
+        "Policy Iteration Steps",
         labelpad=12,
         fontweight="bold",
     )
@@ -386,7 +386,7 @@ def write_plot(rows, output_png, events):
         fontweight="bold",
     )
     ax.set_title(
-        "Pong Policy Archive Performance",
+        "Pong Policy Performance",
         pad=20,
         fontweight="bold",
     )
@@ -404,7 +404,7 @@ def write_plot(rows, output_png, events):
             marker="o",
             markersize=6,
             linewidth=1.6,
-            label="Archive Margin",
+            label="Current Best Margin",
         ),
         Line2D(
             [0],

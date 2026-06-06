@@ -1,4 +1,4 @@
-# Pong RAM 策略报告
+# 策略
 
 [English](POLICY.md) | 中文
 

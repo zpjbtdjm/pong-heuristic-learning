@@ -4,7 +4,7 @@ English | [中文](README_zh.md)
 
 This project documents a **heuristic learning** policy optimization experiment on Atari Pong. The idea is inspired by Jiayi Weng's blog post [Learning Beyond Gradients](https://trinkle23897.github.io/learning-beyond-gradients/).
 
-The practical result: after 100 rounds of heuristic optimization with Codex, the final policy wins **all** 30 matches under different seed settings, improving the average score margin from -6.40 to 5.43.
+- Main Result: after 100 rounds of heuristic optimization with Codex, the final policy wins **all** 30 matches under different seed settings, improving the average score margin from -6.40 to 5.43.
 
 ## Project Contents
 

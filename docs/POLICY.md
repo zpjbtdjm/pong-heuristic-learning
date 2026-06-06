@@ -1,4 +1,4 @@
-# Pong RAM Policy Report
+# Policy
 
 English | [中文](POLICY_zh.md)
 

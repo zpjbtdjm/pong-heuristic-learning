@@ -3,7 +3,7 @@
 [English](README.md) | 中文
 
 本项目记录了一次基于 Atari Pong 的**启发式学习**策略优化实验，这一思想来自翁家翌的博客[《Learning Beyond Gradients》](https://trinkle23897.github.io/learning-beyond-gradients/)。
-- 直观效果：使用 Codex 进行启发式优化 100 轮后，在在不同种子设定下的 30 局比赛中实现**全胜**，平均分差从 -6.40 提升至 5.43。
+- 主要结果：使用 Codex 进行启发式优化 100 轮后，在在不同种子设定下的 30 局比赛中实现**全胜**，平均分差从 -6.40 提升至 5.43。
 
 ## 项目内容
 

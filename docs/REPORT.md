@@ -1,41 +1,41 @@
-# Heuristic Learning
+# Heuristic Learning Report
 
-English | [中文](REPORT_zh.md)
+[English](REPORT.md) | Chinese
 
 ## Optimization History
-
-- Turn 0: I asked the model to run about 3 iterations to check whether it could proceed normally.
-- Turn 3: I requested another 3 iterations to further test whether the model could keep working normally.
-- Turn 4: The model became blocked during optimization and wanted to run a large parameter search. I stopped it and asked for substantive changes instead of only parameter changes.
-- Turn 12: After repeated failures, the model started to stop early on its own. I restarted it and required it to keep iterating unless I manually ended the process.
-- Turn 13: The model automatically recognized the situation and entered `/goal` mode.
-- Turn 35: Because multiple rounds were stuck around -1.00 to -0.90, I asked the model to search in much broader directions. This pivot was successful.
-- Turn 38: The model identified missing paddle-velocity information by itself and added it to the state. This later produced a large improvement.
-- Turn 55: The model noticed that only one game was still being lost, expanded the analysis scope by itself, and first inspected the final failure before deciding whether to keep adjusting.
-- Turn 59: The model read all game traces, reasoned about the true failure points, and found that they were hard to summarize as one simple pattern.
-- Turn 65: The model tried to handle special game indices, which was similar to hacking and unreasonable, so I rejected it. At the same time, it was drifting back toward parameter tuning, which seems to happen near context-length pressure.
-- Turn 68: The model kept trying to modify the state to seek more information, but that information was not useful, so I stopped it.
+- **Turn 0** I asked the model to perform 3 improvements to verify whether it could iterate normally.
+- **Turn 3** I again asked the model to perform 3 additional improvements to further test its iterative capability.
+- **Turn 4** The model's optimization became blocked, and it attempted to conduct a large-scale parameter search on its own; I stopped this behavior and asked the model to make substantive changes instead of merely staying at parameter tuning.
+- **Turn 12** Due to prolonged failure in self-optimization, the model exhibited early stopping; I restarted the model and required it to continue iterating until I manually terminated it.
+- **Turn 13** The model automatically identified and started `/goal` mode.
+- **Turn 35** Since performance over multiple turns had long hovered around -1.00 to -0.90, I asked the model to conduct a large-scale direction search; this shift achieved significant results.
+- **Turn 38** The model independently identified that racket speed information was missing from the state and proactively supplemented this information; this addition produced significant effects in subsequent searches.
+- **Turn 55** After discovering that only one game remained failed, the model automatically expanded the analysis scope, first examining the failure near the end of that game before deciding whether to continue adjusting.
+- **Turn 59** The model independently read the contents of all games, analyzed the true points of loss, and found that these loss points were difficult to summarize as a single type of pattern.
+- **Turn 65** The model attempted targeted handling for special games, but this approach resembled a kind of hacking and was unreasonable, so I rejected it; at the same time, the model gradually entered parameter-tuning mode again, a phenomenon that seemed more likely to occur when approaching the context length limit.
+- **Turn 68** The model continued attempting to modify new state information to obtain more information, but this information was actually unhelpful, so I stopped it.
 
 ![policy_archive_performance.png](../results/policy_archive_performance.png)
 
-## Decision Process
+## Decision-Making Process
+1. Human manually guided decisions that were effective, a total of **1** time:
+   - Required the model to search more directions.
 
-1. Human-guided decisions that worked: 1
-   - Asked the model to search in more directions.
-2. Reasonable and effective model-adaptive decisions: 3
-   - Automatically entered `/goal` mode.
-   - Identified missing paddle-velocity information in the state.
-   - Expanded the analysis scope by itself.
-3. Incorrect model-adaptive decisions: 4
-   - Tried to run a large parameter search.
-   - Stopped early by itself.
-   - Tried to handle special game indices.
-   - Kept trying to modify the state.
+2. Reasonable and effective model decisions, a total of **3** times:
+   - Automatically identified and started `/goal` mode;
+   - Independently identified that racket speed information was missing from the state;
+   - Independently expanded the analysis scope.
+
+3. Incorrect model decisions that were later manually corrected by the human, a total of **4** times:
+   - Attempted to conduct a large-scale parameter search on its own;
+   - Exhibited early stopping on its own;
+   - Attempted targeted handling for special games;
+   - Continued attempting to modify new state information.
 
 ## Lessons
+- **Time Audit**: The model lacks time-auditing capability and may start tasks that take too long to execute, such as large-scale parameter searches.
+- **Fixed Mindset**: When the context becomes too long, the model can easily fall into a local fixed mindset, causing the strategy to converge prematurely and eventually degrade into parameter tuning, making it difficult to continue effective search.
+- **Task Drift**: After clearing the context, the model's understanding of task boundaries may drift, resulting in some hacking strategies that misunderstand feasible solutions.
 
-- **Time audit**: The model does not perform time auditing. It may start tasks that take a very long time, such as large parameter searches.
-- **Fixed thinking**: When the context becomes long, the model often gets trapped in a local mindset. The strategy converges too early and eventually degenerates into parameter tuning, making effective search difficult.
-- **Task drift**: When context is cleared, the model can drift in its understanding of the task boundary, which can lead to hacking-style strategies based on incorrect assumptions about feasible solutions.
-
-Total time: **5h**
+## Insights
+- **Joint Optimization**: In the process of optimizing the target strategy, the model's behavior is not fixed; it may actively adjust and optimize its own optimization process by self-setting goals, supplementing missing information, expanding the analysis scope, and so on.
