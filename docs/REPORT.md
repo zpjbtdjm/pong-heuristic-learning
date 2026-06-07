@@ -1,6 +1,6 @@
 # Heuristic Learning Report
 
-[English](REPORT.md) | Chinese
+English | [中文](REPORT_zh.md)
 
 ## Optimization History
 - **Turn 0** I asked the model to perform 3 improvements to verify whether it could iterate normally.
